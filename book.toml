@@ -1,0 +1,9 @@
+[book]
+authors = ["KingYen."]
+language = "zh-CN"
+multilingual = false
+src = "src"
+title = "QIT Software Studio Algorithm Library"
+
+[output.html.playground]
+editable = true

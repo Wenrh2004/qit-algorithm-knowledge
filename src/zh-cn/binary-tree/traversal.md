@@ -31,7 +31,8 @@ func preOrderTraversal(root *TreeNode) []int {
     result := []int{}
     
     // 定义递归函数
-    traversal := func(node *TreeNode) {
+    var traversal func(node *TreeNode)
+    traversal = func(node *TreeNode) {
         // 终止条件, 当节点为空时返回
         if node == nil {
             return
@@ -101,7 +102,8 @@ func preOrderTraversal(root *TreeNode) []int {
 func inOrderTraversal(root *TreeNode) []int {
     result := []int{}
     // 定义递归函数
-    traversal := func(node *TreeNode) {
+    var traversal func(node *TreeNode)
+    traversal = func(node *TreeNode) {
         // 终止条件, 当节点为空时返回
         if node == nil {
             return
@@ -160,7 +162,8 @@ func inOrderTraversal(root *TreeNode) []int {
 func postOrderTraversal(root *TreeNode) []int {
     result := []int{}
     // 定义递归函数
-    traversal := func(node *TreeNode) {
+    var traversal func(node *TreeNode)
+    traversal = func(node *TreeNode) {
         // 终止条件, 当节点为空时返回
         if node == nil {
             return

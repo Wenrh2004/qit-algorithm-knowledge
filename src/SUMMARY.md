@@ -33,6 +33,7 @@
 - [栈与队列]()
 
 - [二叉树](zh-cn/binary-tree/index.md)
+  - [二叉树遍历](zh-cn/binary-tree/traversal.md)
 
 - [回溯]()
 

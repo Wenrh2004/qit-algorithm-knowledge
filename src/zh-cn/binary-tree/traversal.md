@@ -212,7 +212,7 @@ func postOrderTraversal(root *TreeNode) []int {
 #### 递归遍历
 
 ```go
-unc levelOrder(root *TreeNode) [][]int {
+func levelOrder(root *TreeNode) [][]int {
     result := [][]int{}
     
     // 定义递归函数

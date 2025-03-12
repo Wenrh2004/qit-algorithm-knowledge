@@ -108,3 +108,145 @@ func search(nums []int, target int) int {
     return -1;
 }
 ```
+
+#### Java
+
+-左闭右闭区间
+
+```Java
+class Solution {
+    public int search(int[] nums, int target) {
+       
+        if (target < nums[0] || target > nums[nums.length - 1]) {
+            return -1;
+        }
+        int left = 0, right = nums.length - 1;
+        while (left <= right) {
+            int mid = left + ((right - left) >> 1);
+            if (nums[mid] == target) {
+                return mid;
+            }
+            else if (nums[mid] < target) {
+                left = mid + 1;
+            }
+            else { // nums[mid] > target
+                right = mid - 1;
+            }
+        }
+        return -1;
+    }
+}
+```
+
+-左闭右开区间
+
+```Java
+class Solution {
+    public int search(int[] nums, int target) {
+        int left = 0, right = nums.length;
+        while (left < right) {
+            int mid = left + ((right - left) >> 1);
+            if (nums[mid] == target) {
+                return mid;
+            }
+            else if (nums[mid] < target) {
+                left = mid + 1;
+            }
+            else { // nums[mid] > target
+                right = mid;
+            }
+        }
+        return -1;
+    }
+}
+```
+
+#### TypeScript
+
+-左闭右闭区间
+
+```TypeScript
+function search(nums: number[], target: number): number {
+    let mid: number, left: number = 0, right: number = nums.length - 1;
+    while (left <= right) {
+        mid = left + ((right - left) >> 1);
+        if (nums[mid] > target) {
+            right = mid - 1;
+        } else if (nums[mid] < target) {
+            left = mid + 1;
+        } else {
+            return mid;
+        }
+    }
+    return -1;
+};
+```
+
+-左闭右开区间
+
+```TypeScript
+function search(nums: number[], target: number): number {
+    let mid: number, left: number = 0, right: number = nums.length;
+    while (left < right) {
+        mid = left +((right - left) >> 1);
+        if (nums[mid] > target) {
+            right = mid;
+        } else if (nums[mid] < target) {
+            left = mid + 1;
+        } else {
+            return mid;
+        }
+    }
+    return -1;
+};
+```
+
+#### JavaScript
+
+-左闭右闭区间 [left, right]
+
+```JavaScript
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var search = function(nums, target) {
+    let mid, left = 0, right = nums.length - 1;
+    while (left <= right) {
+        mid = left + ((right - left) >> 1);
+        if (nums[mid] > target) {
+            right = mid - 1;  
+        } else if (nums[mid] < target) {
+            left = mid + 1;  
+        } else {
+            return mid;
+        }
+    }
+    return -1;
+};
+```
+
+-左闭右开区间 [left, right)
+
+```JavaScript
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var search = function(nums, target) {
+    let mid, left = 0, right = nums.length;    
+    while (left < right) {
+        mid = left + ((right - left) >> 1);
+        if (nums[mid] > target) {
+            right = mid;  
+        } else if (nums[mid] < target) {
+            left = mid + 1;  
+        } else {
+            return mid;
+        }
+    }
+    return -1;
+};
+```
